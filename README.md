@@ -22,10 +22,63 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit the `ANSWERS.md` file to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Why would you use class component over function components (removing hooks from the question)?
-- [ ] Name three lifecycle methods and their purposes.
-- [ ] What is the purpose of a custom hook?
-- [ ] Why is it important to test our apps?
+- [x] Why would you use class component over function components (removing hooks from the question)?
+        classComponents:
+        You can use this.state,(react lifcycle) which gives you access to handlechanges, handlesubmit, clearform* , componentdidmount
+        It can handle statful logic, can manipulate the state
+import React, { Component } from "react";
+
+class Person extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      myState: true;
+    }
+  }
+   render() {
+    return (
+      <div>
+        <h1>Hello Person</h1>
+      </div>
+    );
+  }
+}
+
+export default Person;
+
+    Functional Components:
+    -they accept and display data, 
+    -does not have render method
+    -use props
+
+import React from "react";
+
+const Person = props => (
+  <div>
+    <h1>Hello, {props.name}</h1>
+  </div>
+);
+
+export default Person;
+
+- [x] Name three lifecycle methods and their purposes.
+    1. Mounting:
+        - can set state and preform an axios calls,
+        - componentDidMount: constructor(), render()
+        - puts elements into the DOM
+    2. Updating:
+        - occurs when updating happens, or when there is a change in the components state or props
+        - componentDidUpdate: 
+    3. UnMounting: 
+        - occurs when component is removed from the DOM
+        - ComponentWillUnmount: 
+- [x] What is the purpose of a custom hook?
+        Custom hooks in react must start with "use" prefix, and they help us create reusable and modular component logic. For example,
+        our "useDarkMode" hook enables a dark mode component based on user's darkmode preferences.
+- [x] Why is it important to test our apps?
+        Testing our application allows us to simulate expected/unexpected conditions, and allows us to define the behaviors of the application
+        in these environments. A well-tested application won't break as easily (since expected conditions have been accounted for) and will
+        allow us to fail "gracefully".
 
 ## Project Set Up
 
