@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import './App.css';
 import WomensCard from './Components/WomensCard';
+import NavBar from './Components/NavBar';
 
 class App extends Component {
   constructor(){
@@ -29,7 +30,9 @@ class App extends Component {
 render(){
   return (
     <div className="App">
+      <NavBar/>
       <h1> Women's Soccer</h1>
+      
       {this.state.players.map(player =>(
         <WomensCard key={player.id} player={player} />
       ))}
