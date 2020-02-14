@@ -1,7 +1,7 @@
 import React from "react";
 
 const WomensCard = props => {
-    const {name,country,searches } = props.player;
+    const {name,country,searches } = props;
   return (
     <div className='player-cards'>
         <div>

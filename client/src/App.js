@@ -33,7 +33,7 @@ render(){
       <NavBar/>
       <div className="App">
       {this.state.players.map(player =>(
-        <WomensCard key={player.id} player={player} />
+        <WomensCard key={player.id} name={player.name} country={player.country} searches={player.searches} />
       ))}
     </div>
     </div>
