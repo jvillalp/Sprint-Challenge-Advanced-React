@@ -1,5 +1,14 @@
+.header{
+  align-items: center;
+}
+
 .App {
   text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* width: 50%; */
 }
 
 .App-logo {
@@ -33,4 +42,31 @@
 }
 .dark-mode {
   background-color: grey;
+}
+.player-cards{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+  padding: 2%;
+  margin: 2%;
+  border: 2px dotted red;
+  background-color: lightcoral;
+  color: white;
+  border-radius: 8px;
+
+}
+.women{
+  text-align: center;
+}
+
+button{
+  margin-left: 45%;
+  align-items: center;
+  background-color: black;
+  border-radius: 12px;
+  border: 1px dotted  lightcoral;
+  padding: 0;
+  color: white;
+  font-family: 'Loved by the King', cursive;
 }

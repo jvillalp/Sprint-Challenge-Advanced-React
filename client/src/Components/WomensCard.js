@@ -1,11 +1,14 @@
 import React from "react";
 
 const WomensCard = props => {
-    const {name,country } = props.player;
+    const {name,country,searches } = props.player;
   return (
-    <div>
-      <p>Name{name}</p>
-      <p>Country{country}</p>
+    <div className='player-cards'>
+        <div>
+      <h2>{name}</h2>
+      <h4>{country}</h4>
+      <p>Searches: {searches}</p>
+    </div>
     </div>
   );
 };

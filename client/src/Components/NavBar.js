@@ -16,7 +16,8 @@ const Nav = () => {
 
 
     return (
-       <div>
+       <div className="NavBar">
+           <h1 className='women'> Women's World Cup Players: </h1>
            <button onClick={toggleButton}>{darkMode ? lightMoon : darkMoon}</button>
        </div> 
     )

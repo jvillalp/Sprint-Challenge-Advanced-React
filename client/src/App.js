@@ -29,13 +29,13 @@ class App extends Component {
   }
 render(){
   return (
-    <div className="App">
+    <div>
       <NavBar/>
-      <h1> Women's Soccer</h1>
-      
+      <div className="App">
       {this.state.players.map(player =>(
         <WomensCard key={player.id} player={player} />
       ))}
+    </div>
     </div>
   );
 }
