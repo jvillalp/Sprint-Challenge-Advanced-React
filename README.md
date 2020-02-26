@@ -22,40 +22,93 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit the `ANSWERS.md` file to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Why would you use class component over function components (removing hooks from the question)?
-- [ ] Name three lifecycle methods and their purposes.
-- [ ] What is the purpose of a custom hook?
-- [ ] Why is it important to test our apps?
+- [x] Why would you use class component over function components (removing hooks from the question)?
+        classComponents:
+        You can use this.state,(react lifcycle) which gives you access to handlechanges, handlesubmit, clearform* , componentdidmount
+        It can handle statful logic, can manipulate the state
+import React, { Component } from "react";
+
+class Person extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      myState: true;
+    }
+  }
+   render() {
+    return (
+      <div>
+        <h1>Hello Person</h1>
+      </div>
+    );
+  }
+}
+
+export default Person;
+
+    Functional Components:
+    -they accept and display data, 
+    -does not have render method
+    -use props
+
+import React from "react";
+
+const Person = props => (
+  <div>
+    <h1>Hello, {props.name}</h1>
+  </div>
+);
+
+export default Person;
+
+- [x] Name three lifecycle methods and their purposes.
+    1. Mounting:
+        - can set state and preform an axios calls,
+        - componentDidMount: constructor(), render()
+        - puts elements into the DOM
+    2. Updating:
+        - occurs when updating happens, or when there is a change in the components state or props
+        - componentDidUpdate: 
+    3. UnMounting: 
+        - occurs when component is removed from the DOM
+        - ComponentWillUnmount: 
+- [x] What is the purpose of a custom hook?
+        Custom hooks in react must start with "use" prefix, and they help us create reusable and modular component logic. For example,
+        our "useDarkMode" hook enables a dark mode component based on user's darkmode preferences.
+- [x] Why is it important to test our apps?
+        Testing our application allows us to simulate expected/unexpected conditions, and allows us to define the behaviors of the application
+        in these environments. A well-tested application won't break as easily (since expected conditions have been accounted for) and will
+        allow us to fail "gracefully".
 
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add TL as collaborator on Github.
-- [ ] Clone your OWN version of Repo. **(Not Lambda's by mistake!)**
-- [ ] Create a new Branch locally: `git checkout -b <firstName-lastName>`.
-- [ ] Run `yarn` to download dependencies.
-- [ ] Run the server using `yarn start` or `node server.js`.
-- [ ] In a separate terminal cd into the `client` folder and run `yarn install` to download dependencies.
-- [ ] Still inside the `client` folder run `yarn start` to run the client application.
-- [ ] Implement the project on this Branch, **committing progress & changes often.**
-- [ ] Push commits: `git push origin <firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add TL as collaborator on Github.
+- [x] Clone your OWN version of Repo. **(Not Lambda's by mistake!)**
+- [x] Create a new Branch locally: `git checkout -b <firstName-lastName>`.
+- [x] Run `yarn` to download dependencies.
+- [x] Run the server using `yarn start` or `node server.js`.
+- [x] In a separate terminal cd into the `client` folder and run `yarn install` to download dependencies.
+- [x] Still inside the `client` folder run `yarn start` to run the client application.
+- [x] Implement the project on this Branch, **committing progress & changes often.**
+- [x] Push commits: `git push origin <firstName-lastName>`.
 
 Follow these steps for completing your project:
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo).
-- [ ] Add your Project Manager as a Reviewer on the Pull-request.
-- [ ] PM then will count the HW as done by merging the branch back into master.
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo).
+- [x] Add your Project Manager as a Reviewer on the Pull-request.
+- [x] PM then will count the HW as done by merging the branch back into master.
 
 ## Minimum Viable Product
 
 Your finished project must include all of the following requirements:
 
-- [ ] Class component that fetches data from the server you now have running - the data can be fetched from `http://localhost:5000/api/players`
-- [ ] Display the player data you receive from the API
-- [ ] Build a custom hook and use it in your app - this can be a localStorage hook, a fetch hook, a dark mode hook, or any other hook you would like
-- [ ] Write a "reasonable" amount of unit tests for your React components. What does "reasonable amount" mean? That is up to you to decide. Be ready to defend your choice to your TL 👍
+- [x] Class component that fetches data from the server you now have running - the data can be fetched from `http://localhost:5000/api/players`
+- [x] Display the player data you receive from the API
+- [x] Build a custom hook and use it in your app - this can be a localStorage hook, a fetch hook, a dark mode hook, or any other hook you would like
+- [x] Write a "reasonable" amount of unit tests for your React components. What does "reasonable amount" mean? That is up to you to decide. Be ready to defend your choice to your TL 👍
 
 ## Stretch Problems
 

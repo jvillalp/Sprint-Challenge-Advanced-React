@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Component} from 'react';
+import axios from 'axios';
 
-function App() {
+import './App.css';
+import WomensCard from './Components/WomensCard';
+import NavBar from './Components/NavBar';
+
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      players:[]
+    }
+  }
+
+  componentDidMount(){
+    axios
+        .get('http://localhost:5200/api/players')
+        .then(res =>{
+          console.log("women world cup players",res.data);
+          this.setState({
+            players: res.data
+          })
+          })
+          .catch(err =>{
+            console.log("This is an error on search", err);
+        })
+  }
+render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar/>
+      <div className="App">
+      {this.state.players.map(player =>(
+        <WomensCard key={player.id} name={player.name} country={player.country} searches={player.searches} />
+      ))}
+    </div>
     </div>
   );
 }
-
+}
 export default App;
